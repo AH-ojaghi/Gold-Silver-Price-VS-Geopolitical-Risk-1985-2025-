@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-100 to-slate-200 text-slate-800 p-8">
+
+    <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-t-8 border-t-purple-600">
+        
+        <!-- Header and Author Info Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-purple-800 mb-2">Gold-Silver Price vs. Geopolitical Risk</h1>
+            <p class="text-base md:text-lg text-slate-600">A Report on the Price of Gold and Silver in relation to Geopolitical Risk</p>
+            
+            <div class="mt-8 mb-6 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                <h3 class="text-xl font-semibold text-slate-700 mb-4">Author Information</h3>
+                <p class="text-slate-600">By: Amirhossein Ojaghi - aojaghi036@gmail.com</p>
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Introduction</span>
+            </h2>
+            <p class="text-slate-700 leading-loose text-justify">In the turbulent world of the global economy, gold and silver act as safe-haven assets, playing a critical role against volatility caused by geopolitical risks. This report is based on an analysis of historical data from 1985 to 2025, extracted from the Kaggle dataset "Gold-Silver Price vs. Geopolitical Risk". It examines relevant trends, distributions, correlations, and forecasts. Using analytical tools such as candlestick charts, percentage change distribution, a correlation heatmap, time series decomposition, and an LSTM deep learning model, key patterns have been identified. The objective of this report is to provide insights into the impact of geopolitical factors on prices, which can assist investors and policymakers in making informed decisions. The details of the analyses and results will be reviewed further.</p>
+        </section>
+
+        <!-- Key Concepts Section -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Key Concepts</span>
+            </h2>
+            <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                <ul class="list-disc list-inside space-y-2 text-slate-800 leading-loose text-justify">
+                    <li><span class="font-bold">Geopolitical Risk (GPRD):</span> An index to measure risks arising from political and military tensions and events around the world.</li>
+                    <li><span class="font-bold">LSTM:</span> A type of recurrent neural network used for analyzing and forecasting time series data such as stock or commodity prices.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Chart 1 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Gold Price Candlestick Chart</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Gold Price Candlestick.png" alt="Gold Price Candlestick Chart" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">The Gold Price Candlestick Chart from 1985 to 2025 shows a significant price increase from around $500 to over $3500. Prices remained relatively stable and low until the early 2000s, after which a sharp upward trend began. The intense fluctuations in recent decades, especially after 2010, indicate the impact of geopolitical or economic events, which are marked by gray areas. The continuous increase from 2015 onwards is noteworthy, likely due to a rise in demand or global instability. This pattern suggests that gold has played an important role as a safe haven during times of crisis.</p>
+            </div>
+        </section>
+
+        <!-- Chart 2 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Gold % Change Time Series</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src=".\Pictures\Time Series of Gold % Change.png" alt="Time Series of Gold % Change" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">The Gold Price % Change chart from 1985 to 2025 demonstrates severe daily fluctuations, with positive peaks up to 10% and negative drops of up to -5%. Peaks and drops are more noticeable in the gray areas (geopolitical events), indicating the impact of crises. The average change is close to zero, but the high dispersion signifies market instability. The increase in volatility after 2000 is seen with greater intensity in recent decades, likely due to global events. This pattern can be useful for predicting the market's reaction to future events.</p>
+            </div>
+        </section>
+
+        <!-- Chart 3 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Correlation between Gold and GPRD</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Correlation between Gold and GPRD.png" alt="Correlation between Gold and GPRD" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">The scatter plot shows a weak relationship between the percentage change of GPRD and the percentage change in gold price, with a correlation coefficient of 0.0013. Most data points are concentrated in the range of 0% to 200% GPRD change and -5% to 5% gold change, showing no distinct pattern. Scattered points with over 600% GPRD change and negative gold changes might indicate a reverse reaction in rare circumstances. The lack of strong clustering and the low correlation coefficient suggest that GPRD alone is not a good predictor for gold changes. This analysis proposes that other factors also play a role in gold price volatility and should be examined.</p>
+            </div>
+        </section>
+        
+        <!-- Chart 4 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Distribution of Gold Price % Changes</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Distribution of Gold Price % Changes.png" alt="Distribution of Gold Price % Changes" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">The distribution chart of gold price percentage changes shows that these changes approximately follow a normal pattern. The average change is 0.03% and the standard deviation is 0.98%, which indicates no specific tendency towards an upward or downward trend and relatively low market volatility. The close overlap of the yellow histogram with the red normal curve confirms this match. At the same time, the range of changes from a minimum of -8.49% to a maximum of 11% shows that severe fluctuations can occur under special circumstances. Statistical indicators such as skewness (0.00) and kurtosis (0.03) also demonstrate the symmetry of the distribution and the absence of heavy tails. These characteristics present gold as a relatively stable asset against global risks and make it possible to use statistical models based on normal distribution (such as Value at Risk) for risk analysis and prediction, although in conditions of rare and severe events, more advanced models will be needed.</p>
+            </div>
+        </section>
+
+        <!-- Chart 5 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Gold Price and GPRD Over Time</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Gold Price and GPRD Over Time.png" alt="Gold Price and GPRD Over Time" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">The chart shows the growth of gold price from 1985 to 2025, which has risen from around $500 to over $3500, with greater acceleration after 2015. The Geopolitical Risk (GPRD) has severe fluctuations, especially high peaks in the early 2000s and 2020s, which do not align with the increase in gold price. Until 2005, the price of gold and GPRD show a weak synchronous pattern, but from 2010 onwards, the increase in gold is accompanied by GPRD fluctuations. GPRD peaks, such as in 2008 and 2020, may indicate the market's reaction to global crises, but the direct correlation is weak. This analysis suggests that factors other than GPRD, such as demand or monetary policies, have a greater impact on gold prices.</p>
+            </div>
+        </section>
+
+         <!-- Chart 6 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Correlation Heatmap</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Correlation Heatmap.png" alt="Correlation Heatmap" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">The correlation heatmap shows a strong correlation (1) between the percentage change of gold and silver (0.707), indicating similar behavior in the markets. The correlation of GPRD changes with gold and silver is very weak (close to zero), and medium to strong with GPRD active changes (0.570) and GPRD threats (0.758). A strong inverse relationship (-0.670) between gold percentage changes and active GPRD changes indicates an opposite reaction in specific situations. Descriptive statistics show that gold price has changed from $252 to $3635 and GPRD from 9.49 to 1045.6, and high standard deviation confirms the volatility. These patterns suggest that geopolitical threats have a greater impact on prices than overall GPRD changes.</p>
+            </div>
+        </section>
+
+        <!-- Chart 7 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Decomposition of Gold Price</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Decomposition of Gold Price.png" alt="Decomposition of Gold Price" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-l-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">The time series decomposition of gold price shows that the observed data from 1985 to 2025 follows a stable upward trend from $500 to $3500. The trend (green line) has increased since the early 2000s and gained more momentum from 2015, which is related to economic growth or global instability. The seasonal component (orange line) shows annual fluctuations of about ±$20, which are likely related to trading cycles. The residuals (red line) have random fluctuations with a range of ±$200, which indicates the impact of unpredictable factors. This decomposition shows that the main and seasonal trends are significant, but the residuals point to the need for more advanced modeling for more accurate prediction.</p>
+            </div>
+        </section>
+
+        <div class="border-t-2 border-slate-200 my-12 pt-12"></div>
+        <br/>
+        
+        <!-- LSTM Section -->
+        <div class="bg-slate-800 text-white rounded-3xl p-8 mb-12 shadow-2xl border-t-8 border-t-emerald-400">
+            <h1 class="text-3xl md:text-4xl font-bold text-emerald-400 mb-6 text-center">
+                <span>LSTM Model Performance</span>
+            </h1>
+            <section class="mb-8">
+                <div class="mb-8 p-4 bg-slate-700 rounded-xl shadow-inner">
+                    <img src="./Pictures/LSTM Model Performance.png" alt="LSTM Model Performance" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="bg-slate-700 p-6 rounded-lg border-l-4 border-emerald-500">
+                    <p class="text-slate-200 leading-loose text-justify">The LSTM model performance chart shows a good match between predictions and actual data in the training (green line) and validation (blue and red lines) sections, but in the test section (turquoise and orange lines), from around 2020 onwards, the predictions fall behind the actual price increase. The model's accuracy in validation is high (MAE: 41.15, RMSE: 50.16), indicating proper learning of past patterns, but lower in the test set (MAE: 298.77, RMSE: 358.13) due to its inability to predict sudden price increases resulting from external factors such as inflation, geopolitical crises (like wars), or monetary policies. The main reason for this discrepancy is the model's overfitting on older data (until 2015-2020) and the non-stationary nature of the gold price time series, which ignores structural breaks. To improve, it is suggested to use stronger regularization techniques (such as higher dropout or L2 regularization) to increase generalization. Furthermore, adding external features such as interest rates, the dollar index, or recent real GPRD data can make the model more robust. The use of more advanced models such as Prophet or Transformer-based models (like Temporal Fusion Transformer), which cope better with non-linear and seasonal trends, is recommended. Finally, periodic retraining of the model with updated data (until 2025) and using time-series cross-validation to prevent data leakage is essential. Integrating external features like interest rates or the dollar index into the models, using ensemble techniques (such as combining LSTM with ARIMA), and periodic retraining with fresh data to reduce overfitting are also suggested. Additionally, Transformer-based models can better model more complex patterns.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="border-t-2 border-slate-200 mt-12 pt-12"></div>
+
+        <!-- Conclusion -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Summary and Conclusion</span>
+            </h2>
+            <div class="bg-blue-100 p-6 rounded-lg">
+                <p class="text-slate-800 leading-loose text-justify">The analysis of gold and silver price data against Geopolitical Risk (GPRD) from 1985 to 2025 showed that gold prices have had a strong upward trend, rising from around $500 to over $3500, with intense fluctuations during crisis periods (like the gray event areas). Gold price percentage changes are almost normally distributed with a mean close to zero and a standard deviation of 0.98%, indicating market volatility. A weak correlation between gold changes and GPRD (0.0013) was observed, but there was a stronger correlation with silver (0.707) and a medium one with GPRD threats. The scatter and correlation heatmap indicated a weak overall relationship of GPRD with prices, while gold prices and GPRD had weak synchronicity over time. The time series decomposition of gold prices highlighted an upward trend, a weak annual seasonal component, and volatile residuals. The LSTM model performed well in training and validation (MAE: 41.15) but was weak in testing (MAE: 298.77) due to its inability to predict sudden increases. In conclusion, gold has acted as a safe haven against geopolitical risks, but GPRD alone does not fully explain the volatility, and other economic factors like inflation or monetary policies play a key role. </p>
+            </div>
+        </section>
+
+        <!-- Data Sources -->
+        <section>
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-l-4 border-purple-500 pl-4">
+                <span>Data Sources</span>
+            </h2>
+            <div class="bg-blue-100 p-6 rounded-lg">
+                <ul class="list-disc list-inside space-y-2 text-slate-700">
+                    <li>
+                        <a href="https://www.kaggle.com/datasets/shreyanshdangi/gold-silver-price-vs-geopolitical-risk-19852025" class="font-bold text-purple-800">
+                            https://www.kaggle.com/datasets/shreyanshdangi/gold-silver-price-vs-geopolitical-risk-19852025
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش پروژه</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-100 to-slate-200 text-slate-800 p-8">
+
+    <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-t-8 border-t-purple-600">
+        
+        <!-- Header and Author Info Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-purple-800 mb-2"> Gold-Silver Price vs. Geopolitical Risk</h1>
+            <p class="text-base md:text-lg text-slate-600">گزارش قیمت طلا و نقره در برابر ریسک ژئوپلیتیکی</p>
+            
+            <div class="mt-8 mb-6 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                <h3 class="text-xl font-semibold text-slate-700 mb-4">اطلاعات نویسنده</h3>
+                <p class="text-slate-600">توسط: امیرحسین اجاقی - aojaghi036@gmail.com</p>
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Introduction</span>
+                <span class="text-blue-600 text-xl font-normal">(مقدمه)</span>
+            </h2>
+            <p class="text-slate-700 leading-loose text-justify">در دنیای پرتلاطم اقتصاد جهانی، طلا و نقره به عنوان دارایی‌های امن، نقش حیاتی در برابر نوسانات ناشی از ریسک‌های ژئوپلیتیکی ایفا می‌کنند. این گزارش بر اساس تحلیل داده‌های تاریخی از سال ۱۹۸۵ تا ۲۰۲۵، استخراج‌شده از مجموعه داده Kaggle (قیمت طلا و نقره در مقابل ریسک ژئوپلیتیکی)، به بررسی روندها، توزیع‌ها، همبستگی‌ها و پیش‌بینی‌های مرتبط می‌پردازد. با استفاده از ابزارهای تحلیلی مانند نمودارهای شمعی، توزیع تغییرات درصدی، نقشه حرارتی همبستگی، تجزیه سری زمانی و مدل یادگیری عمیق LSTM، الگوهای کلیدی شناسایی شده‌اند. هدف این گزارش، ارائه بینش‌هایی در مورد تأثیر عوامل ژئوپلیتیکی بر قیمت‌ها  می باشد که می‌تواند به سرمایه‌گذاران و سیاست‌گذاران در تصمیم‌گیری‌های آگاهانه کمک کند. در ادامه، جزئیات تحلیل‌ها و نتایج بررسی خواهند شد.</p>
+        </section>
+
+        <!-- Key Concepts Section -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Key Concepts</span>
+                <span class="text-blue-600 text-xl font-normal">(مفاهیم کلیدی)</span>
+            </h2>
+            <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                <ul class="list-disc list-inside space-y-2 text-slate-800 leading-loose text-justify">
+                    <li><span class="font-bold">ریسک ژئوپلیتیکی (GPRD):</span> شاخصی برای اندازه‌گیری ریسک‌های ناشی از تنش‌ها و رویدادهای سیاسی و نظامی در جهان.</li>
+                    <li><span class="font-bold">LSTM:</span> نوعی شبکه عصبی بازگشتی است که برای تحلیل و پیش‌بینی سری‌های زمانی مانند قیمت سهام یا کالاها به کار می‌رود.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Chart 1 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Gold Price Candlestick Chart</span>
+                <span class="text-blue-600 text-xl font-normal">(نمودار شمعی قیمت طلا)</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Gold Price Candlestick.png" alt="نمودار شمعی قیمت طلا" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-r-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">نمودار شمعی قیمت طلا از ۱۹۸۵ تا ۲۰۲۵ نشان‌دهنده رشد قابل‌توجه قیمت از حدود ۵۰۰ دلار به بیش از ۳۵۰۰ دلار است. تا اوایل دهه ۲۰۰۰، قیمت‌ها نسبتاً پایدار و در محدوده پایین باقی مانده‌اند، اما پس از آن روند صعودی شدیدی آغاز شده است. نوسانات شدید در دهه‌های اخیر، به‌ویژه پس از ۲۰۱۰، نشان‌دهنده تأثیر رویدادهای ژئوپلیتیکی یا اقتصادی است که با نواحی خاکستری مشخص شده‌اند. افزایش مداوم از ۲۰۱۵ به بعد، احتمالاً به دلیل افزایش تقاضا یا بی‌ثباتی جهانی، حائز اهمیت است. این الگو نشان می‌دهد طلا به‌عنوان پناهگاه امن در زمان بحران‌ها نقش مهمی ایفا کرده است.</p>
+            </div>
+        </section>
+
+        <!-- Chart 2 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Gold % Change Time Series</span>
+                <span class="text-blue-600 text-xl font-normal">(تغییرات درصدی قیمت طلا در طول زمان)</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src=".\Pictures\Time Series of Gold % Change.png" alt="نمودار تغییرات درصدی قیمت طلا در طول زمان" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-r-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">نمودار تغییرات درصدی قیمت طلا از ۱۹۸۵ تا ۲۰۲۵ نشان‌دهنده نوسانات شدید روزانه با اوج‌های مثبت تا ۱۰٪ و افت‌های منفی تا ۵٪- است. اوج‌ها و افت‌ها به‌ویژه در نواحی خاکستری (رویدادهای ژئوپلیتیکی) بیشتر مشاهده می‌شوند که نشان‌دهنده تأثیر بحران‌ها است. میانگین تغییرات نزدیک به صفر است، اما پراکندگی بالا نشان‌دهنده عدم ثبات در بازار طلا است. افزایش نوسانات پس از سال ۲۰۰۰ با شدت بیشتری در دهه‌های اخیر دیده می‌شود، که احتمالاً به دلیل رویدادهای جهانی است. این الگو می‌تواند برای پیش‌بینی واکنش بازار به رویدادهای آینده مفید باشد.</p>
+            </div>
+        </section>
+
+        <!-- Chart 3 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Correlation between Gold and GPRD</span>
+                <span class="text-blue-600 text-xl font-normal">(همبستگی بین طلا و ریسک ژئوپلیتیکی)</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Correlation between Gold and GPRD.png" alt="نمودار همبستگی بین طلا و ریسک ژئوپلیتیکی" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-r-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">نمودار پراکندگی نشان‌دهنده ارتباط ضعیف بین تغییرات درصدی GPRD و تغییرات درصدی قیمت طلا با ضریب همبستگی ۰.۰۰۱۳ است. بیشتر داده‌ها در محدوده صفر تا ۲۰۰ درصد تغییرات GPRD و تغییرات طلا بین ۵- تا ۵ درصد متمرکز شده‌اند و الگوی مشخصی ندارند. نقاط پراکنده در تغییرات بالای ۶۰۰ درصد GPRD با تغییرات منفی طلا، ممکن است نشان‌دهنده واکنش معکوس در شرایط نادر باشد. عدم وجود خوشه‌بندی قوی و ضریب همبستگی پایین نشان می‌دهد که GPRD به‌تنهایی پیش‌بینی‌کننده خوبی برای تغییرات طلا نیست. این تحلیل پیشنهاد می‌دهد که عوامل دیگری نیز در نوسانات قیمت طلا نقش دارند و باید بررسی شوند.</p>
+            </div>
+        </section>
+        
+        <!-- Chart 4 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Distribution of Gold Price % Changes</span>
+                <span class="text-blue-600 text-xl font-normal">(توزیع تغییرات درصدی قیمت طلا)</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Distribution of Gold Price % Changes.png" alt="نمودار توزیع تغییرات درصدی قیمت طلا" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-r-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">نمودار توزیع تغییرات درصدی قیمت طلا نشان می‌دهد که این تغییرات تقریباً از الگوی نرمال پیروی می‌کنند. میانگین تغییرات ۰.۰۳٪ و انحراف معیار ۰.۹۸٪ است که بیانگر نبود تمایل مشخص به سمت صعود یا نزول و درعین‌حال نوسانات نسبتاً پایین بازار است. همپوشانی نزدیک هیستوگرام زرد با منحنی نرمال قرمز، این تطابق را تأیید می‌کند. درعین‌حال، دامنه تغییرات از حداقل -۸.۴۹٪ تا حداکثر ۱۱٪ نشان می‌دهد که در شرایط خاص امکان نوسانات شدید وجود دارد. شاخص‌های آماری مانند کجی (۰.۰۰) و کشیدگی (۰.۰۳) نیز تقارن توزیع و نبود دم‌های سنگین را نشان می‌دهند. این ویژگی‌ها طلا را به‌عنوان دارایی نسبتاً پایدار در برابر ریسک‌های جهانی معرفی می‌کند و استفاده از مدل‌های آماری مبتنی بر توزیع نرمال (مانند Value at Risk) را برای تحلیل و پیش‌بینی ریسک ممکن می‌سازد، هرچند در شرایط رویدادهای نادر و شدید، به مدل‌های پیشرفته‌تری نیاز خواهد بود.</p>
+            </div>
+        </section>
+
+        <!-- Chart 5 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Gold Price and GPRD Over Time</span>
+                <span class="text-blue-600 text-xl font-normal">(قیمت طلا و ریسک ژئوپلیتیکی در طول زمان)</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Gold Price and GPRD Over Time.png" alt="نمودار قیمت طلا و ریسک ژئوپلیتیکی در طول زمان" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-r-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">نمودار نشان‌دهنده رشد قیمت طلا از ۱۹۸۵ تا ۲۰۲۵ است که از حدود ۵۰۰ دلار به بیش از ۳۵۰۰ دلار رسیده، با شتاب بیشتر پس از سال ۲۰۱۵. ریسک ژئوپلیتیکی (GPRD) نوسانات شدیدی دارد، به‌ویژه اوج‌های بالا در اوایل دهه ۲۰۰۰ و ۲۰۲۰ که با افزایش قیمت طلا هم‌راستا نیست. تا سال ۲۰۰۵، قیمت طلا و GPRD الگوی هم‌زمانی ضعیفی نشان می‌دهند، اما از سال ۲۰۱۰ به بعد، افزایش طلا با نوسانات GPRD همراه است. اوج‌های GPRD، مثل سال ۲۰۰۸ و ۲۰۲۰، ممکن است نشان‌دهنده واکنش بازار به بحران‌های جهانی باشد، اما همبستگی مستقیم ضعیف است. این تحلیل نشان می‌دهد که عوامل دیگری غیر از GPRD، مثل تقاضا یا سیاست‌های پولی، تأثیر بیشتری بر قیمت طلا دارند.</p>
+            </div>
+        </section>
+
+         <!-- Chart 6 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Correlation Heatmap</span>
+                <span class="text-blue-600 text-xl font-normal">(نقشه حرارتی همبستگی)</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Correlation Heatmap.png" alt="نمودار نقشه حرارتی همبستگی" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-r-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">نقشه حرارتی همبستگی نشان‌دهنده همبستگی قوی (۱) بین تغییرات درصدی طلا و نقره (۰.۷۰۷) است که بیانگر رفتار مشابه در بازارها است. همبستگی تغییرات GPRD با طلا و نقره بسیار ضعیف (نزدیک به صفر) و با تغییرات فعال GPRD (۰.۵۷۰) و تهدید GPRD (۰.۷۵۸) متوسط تا قوی است. ارتباط معکوس قوی (-۰.۶۷۰) بین تغییرات درصدی طلا و تغییرات فعال GPRD نشان‌دهنده واکنش مخالف در شرایط خاص است. آمار توصیفی نشان می‌دهد قیمت طلا از ۲۵۲ تا ۳۶۳۵ دلار و GPRD از ۹.۴۹ تا ۱۰۴۵.۶ تغییر کرده و انحراف معیار بالا، نوسانات را تأیید می‌کند. این الگوها پیشنهاد می‌دهند که تهدیدات ژئوپلیتیکی تأثیر بیشتری نسبت به تغییرات کلی GPRD بر قیمت‌ها دارند.</p>
+            </div>
+        </section>
+
+        <!-- Chart 7 -->
+        <section class="mb-12 border-b border-b-slate-300 pb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Decomposition of Gold Price</span>
+                <span class="text-blue-600 text-xl font-normal">(تجزیه زمانی قیمت طلا)</span>
+            </h2>
+            <div class="mb-8 p-4 bg-purple-50 rounded-xl shadow-inner">
+                <img src="./Pictures/Decomposition of Gold Price.png" alt="نمودار تجزیه زمانی قیمت طلا" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+            <div class="bg-purple-100 p-6 rounded-lg border-r-4 border-purple-500">
+                <p class="text-slate-800 leading-loose text-justify">تجزیه زمانی قیمت طلا نشان می‌دهد که داده‌های مشاهده‌شده از ۱۹۸۵ تا ۲۰۲۵ یک روند صعودی پایدار از ۵۰۰ به ۳۵۰۰ دلار را دنبال می‌کند. ترند (خط سبز) از اوایل دهه ۲۰۰۰ افزایش پیدا کرده و از سال ۲۰۱۵ شتاب بیشتری گرفته که با رشد اقتصادی یا بی‌ثباتی جهانی مرتبط است. مولفه فصلی (خط نارنجی) نوسانات سالانه حدود ± ۲۰ دلار را نشان می‌دهد که احتمالاً به چرخه‌های معاملاتی مربوط است. باقیمانده (خط قرمز) نوسانات تصادفی با دامنه ± ۲۰۰ دلار دارد که نشان‌دهنده تأثیر عوامل غیرقابل‌پیش‌بینی است. این تجزیه نشان می‌دهد که روند اصلی و فصلی قابل‌توجه‌اند، اما باقیمانده‌ها نیاز به مدل‌سازی پیشرفته‌تر برای پیش‌بینی دقیق‌تر را نشان می‌دهند.</p>
+            </div>
+        </section>
+
+        <div class="border-t-2 border-slate-200 my-12 pt-12"></div>
+        <br/>
+        
+        <!-- LSTM Section -->
+        <div class="bg-slate-800 text-white rounded-3xl p-8 mb-12 shadow-2xl border-t-8 border-t-emerald-400">
+            <h1 class="text-3xl md:text-4xl font-bold text-emerald-400 mb-6 text-center">
+                <span>LSTM Model Performance</span>
+            </h1>
+            <section class="mb-8">
+                <div class="mb-8 p-4 bg-slate-700 rounded-xl shadow-inner">
+                    <img src="./Pictures/LSTM Model Performance.png" alt="نمودار عملکرد مدل LSTM" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="bg-slate-700 p-6 rounded-lg border-l-4 border-emerald-500">
+                    <p class="text-slate-200 leading-loose text-justify">نمودار عملکرد مدل LSTM نشان‌دهنده تطابق خوب پیش‌بینی‌ها با داده‌های واقعی در بخش آموزشی (خط سبز) و اعتبارسنجی (خط آبی و قرمز) است، اما در بخش تست (خط فیروزه‌ای و نارنجی) از حدود سال ۲۰۲۰ به بعد، پیش‌بینی‌ها عقب‌تر از افزایش واقعی قیمت قرار گرفته‌اند. دقت مدل در اعتبارسنجی بالا است (MAE: ۴۱.۱۵، RMSE: ۵۰.۱۶) که نشان‌دهنده یادگیری مناسب الگوهای گذشته است، اما در تست پایین‌تر (MAE: ۲۹۸.۷۷، RMSE: ۳۵۸.۱۳) به دلیل عدم توانایی در افزایش ناگهانی قیمت ناشی از عوامل خارجی مانند تورم، بحران‌های ژئوپلیتیکی (مثل جنگ‌ها) یا سیاست‌های پولی است. علت اصلی این اختلاف، بیش‌برازش (overfit) شدن مدل روی داده‌های قدیمی (تا ۲۰۱۵-۲۰۲۰) و ایستایی‌نبودن (non-stationary) سری زمانی قیمت طلا است که تغییرات ساختاری (structural breaks) را نادیده می‌گیرد. برای بهبود، پیشنهاد می‌شود از تکنیک‌های قانونمندسازی (regularization) قوی‌تر (مانند dropout بالاتر یا L2 regularization) استفاده شود تا تعمیم‌پذیری (generalization) افزایش یابد. همچنین، افزودن ویژگی‌های خارجی مانند نرخ بهره، شاخص دلار یا داده‌های واقعی GPRD اخیر می‌تواند مدل را مقاوم‌تر کند. استفاده از مدل‌های پیشرفته‌تر مانند Prophet یا Transformer-based (مانند Temporal Fusion Transformer) که بهتر با روندهای غیرخطی و فصلی مقابله (cope) می‌کنند، توصیه می‌شود. در نهایت، آموزش مجدد دوره‌ای مدل با داده‌های به‌روز (تا ۲۰۲۵) و استفاده از اعتبارسنجی متقابل زمانی برای جلوگیری از نشت داده (data leakage) ضروری است. ادغام ویژگی‌های خارجی مانند نرخ بهره یا شاخص دلار در مدل‌ها، استفاده از تکنیک‌های ensemble (مانند ترکیب LSTM با ARIMA) و آموزش مجدد دوره‌ای با داده‌های تازه برای کاهش بیش‌برازش نیز پیشنهاد می‌شود. همچنین، مدل‌های مبتنی بر Transformer می‌توانند الگوهای پیچیده‌تر را بهتر مدل کنند.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="border-t-2 border-slate-200 mt-12 pt-12"></div>
+
+        <!-- Conclusion -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Summary and Conclusion</span>
+                <span class="text-blue-600 text-xl font-normal">(خلاصه و نتیجه‌گیری)</span>
+            </h2>
+            <div class="bg-blue-100 p-6 rounded-lg">
+                <p class="text-slate-800 leading-loose text-justify">تحلیل داده‌های قیمت طلا و نقره در برابر ریسک ژئوپلیتیکی (GPRD) از ۱۹۸۵ تا ۲۰۲۵ نشان داد که قیمت طلا روند صعودی قوی‌ای داشته و از حدود ۵۰۰ دلار به بیش از ۳۵۰۰ دلار رسیده، با نوسانات شدید در دوره‌های بحران (مانند نواحی خاکستری رویدادها). تغییرات درصدی قیمت طلا تقریباً نرمال توزیع شده با میانگین نزدیک به صفر و انحراف معیار ۰.۹۸٪، که حاکی از نوسانات بازار است. همبستگی ضعیف بین تغییرات طلا و GPRD (۰.۰۰۱۳) مشاهده شد، اما همبستگی قوی‌تر با نقره (۰.۷۰۷) و متوسط با تهدیدات GPRD وجود داشت. پراکندگی و نقشه حرارتی همبستگی‌ها نشان‌دهنده ارتباط ضعیف کلی GPRD با قیمت‌ها بود، درحالی‌که قیمت طلا و GPRD در طول زمان هم‌زمانی ضعیفی داشتند. تجزیه زمانی قیمت طلا روند صعودی، مولفه فصلی ضعیف سالانه، و باقیمانده‌های نوسانی را برجسته کرد. مدل LSTM عملکرد خوبی در آموزش و اعتبارسنجی داشت (MAE: ۴۱.۱۵)، اما در تست ضعیف بود (MAE: ۲۹۸.۷۷) به دلیل عدم توانایی در پیش‌بینی افزایش‌های ناگهانی. در نتیجه، طلا به‌عنوان پناهگاه امن در برابر ریسک‌های ژئوپلیتیکی عمل کرده، اما GPRD به‌تنهایی توضیح‌دهنده کامل نوسانات نیست و عوامل اقتصادی دیگری مانند تورم یا سیاست‌های پولی نقش کلیدی دارند.  </p>
+            </div>
+        </section>
+
+        <!-- Data Sources -->
+        <section>
+            <h2 class="text-3xl font-bold text-blue-800 flex flex-col mb-6 border-r-4 border-purple-500 pr-4">
+                <span>Data Sources</span>
+                <span class="text-blue-600 text-xl font-normal">(منابع داده)</span>
+            </h2>
+            <div class="bg-blue-100 p-6 rounded-lg">
+                <ul class="list-disc list-inside space-y-2 text-slate-700">
+                    <li>
+                        <a href="https://www.kaggle.com/datasets/shreyanshdangi/gold-silver-price-vs-geopolitical-risk-19852025" class="text-bold text-purple-800">
+                            https://www.kaggle.com/datasets/shreyanshdangi/gold-silver-price-vs-geopolitical-risk-19852025
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
