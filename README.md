@@ -1,4 +1,4 @@
-# Gold and Silver Price Analysis vs. Geopolitical Risk
+ # Gold and Silver Price Analysis vs. Geopolitical Risk
 
 ![Gold-Silver Price VS Geopolitical Risk](./Report//Pictures/dataset-cover.png)
 
